@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DAL.Models.Request
+namespace ENTIDADES.Request
 {
     public partial class ComputerReq
     {

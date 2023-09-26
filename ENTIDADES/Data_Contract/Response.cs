@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ENTIDADES.Models.Data_Contract
+namespace ENTIDADES.Data_Contract
 {
     public class Response
     {
