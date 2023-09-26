@@ -1,4 +1,4 @@
-﻿using ENTIDADES.Models.Data_Contract;
+﻿using ENTIDADES.Data_Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +9,8 @@ namespace LN
 {
     public interface IComputerService
     {
+        public Response Get(int id) {
+            return new Response();
+        }
     }
 }
