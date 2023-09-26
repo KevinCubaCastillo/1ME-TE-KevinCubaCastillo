@@ -1,4 +1,5 @@
 ﻿using ENTIDADES.Data_Contract;
+using ENTIDADES.Request;
 using LN;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,17 +23,9 @@ namespace _1ME_TE_KevinCubaCastillo.Controllers
         }
 
         [HttpPost ("addComputer")]
-        public IActionResult addComputer()
+        public Response addComputer(ComputerReq req)
         {
-            Response oResponse = new Response();
-            try
-            {
-
-            }catch (Exception ex)
-            {
-                oResponse.description = ex.Message;
-            }
-            return Ok(oResponse);
+            return _computerService.addComputer(req);
         }
     }
 }

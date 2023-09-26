@@ -1,6 +1,8 @@
 ﻿using DAL.Models;
 using ENTIDADES.Data_Contract;
 using ENTIDADES;
+using ENTIDADES.Request;
+
 namespace DAL
 {
     public class ComputerManager
@@ -28,6 +30,35 @@ namespace DAL
             resp.message = "Computadora encontrada con éxito";
             resp.errorCode = 200;
             return resp;
+        }
+        public Response addComputer(ComputerReq req)
+        {
+            Response response = new Response();
+            try
+            {
+                Computer comp = new Computer();
+                comp.Id = codeGenerator(req);
+                comp.Model = req.Model;
+                comp.Brand = req.Brand;
+                comp.Price = req.Price;
+                comp.Size = req.Size;
+                _context.Computers.Add(comp);
+                _context.SaveChanges();
+
+            }
+            catch(Exception e)
+            {
+                response.message = e.Message;
+                response.description = e.ToString();
+                response.errorCode = 200;
+                return response;
+            }
+            return response;
+        }
+        public string codeGenerator(ComputerReq req)
+        {
+            string code = " ";
+            return code;
         }
     }
 }
