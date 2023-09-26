@@ -1,0 +1,11 @@
+CREATE DATABASE computadorasBD
+
+USE computadorasBD
+
+CREATE TABLE computers(
+id VARCHAR(10) NOT NULL PRIMARY KEY,
+model VARCHAR(20) NOT NULL,
+brand VARCHAR(50) NOT NULL,
+price DECIMAL(10,2) NOT NULL,
+size decimal(10,2) NULL,
+)
