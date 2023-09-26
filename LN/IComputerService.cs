@@ -35,7 +35,7 @@ namespace LN
             {
                 Response response = new Response();
                 response.errorCode = 200;
-                response.message = "No se encontraron computadoras con ese ID";
+                response.message = "";
                 return response;
             }
             else

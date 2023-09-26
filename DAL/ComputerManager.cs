@@ -45,6 +45,15 @@ namespace DAL
                 _context.Computers.Add(comp);
                 _context.SaveChanges();
 
+                ENTIDADES.Computadora resp = new Computadora();
+                resp.Id = comp.Id;
+                resp.Model = comp.Model;
+                resp.Brand = comp.Brand;
+                resp.Price = comp.Price;
+                resp.Size = comp.Size;
+                resp.message = "Computadora insertada con éxito";
+                resp.errorCode = 200;
+                return resp;
             }
             catch(Exception e)
             {
@@ -53,11 +62,11 @@ namespace DAL
                 response.errorCode = 200;
                 return response;
             }
-            return response;
         }
         public string codeGenerator(ComputerReq req)
         {
-            string code = " ";
+            Random rand = new Random();
+            string code = rand.Next(1000).ToString();
             return code;
         }
     }

@@ -11,7 +11,8 @@ namespace LN
     {
         public string generateCode(string marca)
         {
-            string code = "";
+            Random rand = new Random();
+            string code = rand.Next(1000).ToString();
             return code;
         }
 
