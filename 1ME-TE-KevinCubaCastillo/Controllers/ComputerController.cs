@@ -16,9 +16,9 @@ namespace _1ME_TE_KevinCubaCastillo.Controllers
         }
 
         [HttpGet("getById")]
-        public Response Get(int id)
+        public Response Get(string id)
         {
-            return _computerService.GetComputer(id); ;
+            return _computerService.GetComputer(id);
         }
 
         [HttpPost ("addComputer")]

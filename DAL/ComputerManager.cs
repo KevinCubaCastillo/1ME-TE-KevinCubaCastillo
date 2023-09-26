@@ -6,19 +6,18 @@ namespace DAL
     public class ComputerManager
     {
         computadorasBDContext _context = new computadorasBDContext(); 
-        public Response GetComputer(int id) {
+        public Response GetComputer(string id) {
             Computer computer;
             try
             {
                 computer = _context.Computers.Find(id);
-                
             }
             catch (Exception e){
                 Response response = new Response();
                 response.message= "No se pudo relizar la busqueda de la computadora";
                 response.description = e.ToString();
                 response.errorCode = 200;
-                return new Response();
+                return response;
             }
             ENTIDADES.Computadora resp = new Computadora();
             resp.Id = computer.Id;

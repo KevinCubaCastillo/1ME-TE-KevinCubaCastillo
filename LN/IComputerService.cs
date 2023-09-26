@@ -10,7 +10,7 @@ namespace LN
 {
     public interface IComputerService
     {
-        public Response GetComputer(int id)
+        public Response GetComputer(string id)
         {
             ComputerManager computerManager = new ComputerManager();
             Response resp = computerManager.GetComputer(id);
