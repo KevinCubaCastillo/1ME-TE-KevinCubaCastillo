@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ENTIDADES\ENTIDADES.csproj" />
     <ProjectReference Include="..\LN\LN.csproj" />
   </ItemGroup>
 
