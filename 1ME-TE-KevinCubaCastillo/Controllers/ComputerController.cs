@@ -24,7 +24,15 @@ namespace _1ME_TE_KevinCubaCastillo.Controllers
         [HttpPost ("addComputer")]
         public IActionResult addComputer()
         {
-            return Ok();
+            Response oResponse = new Response();
+            try
+            {
+
+            }catch (Exception ex)
+            {
+                oResponse.description = ex.Message;
+            }
+            return Ok(oResponse);
         }
     }
 }
