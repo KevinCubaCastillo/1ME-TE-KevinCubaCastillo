@@ -5,28 +5,30 @@ namespace DAL
 {
     public class ComputerManager
     {
-        computadorasBDContext _context; 
+        computadorasBDContext _context = new computadorasBDContext(); 
         public Response GetComputer(int id) {
+            Computer computer;
             try
             {
-                Computer computer = _context.Computers.Find(id);
-                ENTIDADES.Computadora resp = new Computadora();
-                resp.Id = computer.Id;
-                resp.Model = computer.Model;
-                resp.Brand = computer.Brand;
-                resp.Price = computer.Price;
-                resp.Size = computer.Size;
-                resp.message = "Computadora encontrada con éxito";
-                resp.errorCode = 200;
-                return resp;
+                computer = _context.Computers.Find(id);
+                
             }
             catch (Exception e){
-                Response resp = new Response();
-                resp.message= "No se pudo relizar la busqueda de la computadora";
-                resp.description = e.ToString();
-                resp.errorCode = 200;
+                Response response = new Response();
+                response.message= "No se pudo relizar la busqueda de la computadora";
+                response.description = e.ToString();
+                response.errorCode = 200;
                 return new Response();
             }
+            ENTIDADES.Computadora resp = new Computadora();
+            resp.Id = computer.Id;
+            resp.Model = computer.Model;
+            resp.Brand = computer.Brand;
+            resp.Price = computer.Price;
+            resp.Size = computer.Size;
+            resp.message = "Computadora encontrada con éxito";
+            resp.errorCode = 200;
+            return resp;
         }
     }
 }
