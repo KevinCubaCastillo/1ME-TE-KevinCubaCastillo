@@ -9,7 +9,8 @@ namespace LN
 {
     public interface IComputerService
     {
-        public Response Get(int id) {
+        public Response GetComputer(int id)
+        {
             return new Response();
         }
     }

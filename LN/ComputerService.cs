@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ENTIDADES.Data_Contract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,7 @@ namespace LN
             string code = "";
             return code;
         }
+
+
     }
 }

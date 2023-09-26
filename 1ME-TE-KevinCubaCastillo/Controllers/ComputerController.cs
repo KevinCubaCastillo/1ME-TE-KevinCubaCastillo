@@ -1,4 +1,5 @@
-﻿using LN;
+﻿using ENTIDADES.Data_Contract;
+using LN;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,11 +14,13 @@ namespace _1ME_TE_KevinCubaCastillo.Controllers
         {
             _computerService = computerService;
         }
-        [HttpGet ("getById")]           
-        public IActionResult getById(int id)
+
+        [HttpGet("getById")]
+        public Response Get(int id)
         {
-            return Ok();
+            return _computerService.GetComputer(id); ;
         }
+
         [HttpPost ("addComputer")]
         public IActionResult addComputer()
         {

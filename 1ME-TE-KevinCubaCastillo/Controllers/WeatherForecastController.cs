@@ -1,3 +1,5 @@
+using ENTIDADES.Data_Contract;
+using LN;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _1ME_TE_KevinCubaCastillo.Controllers
